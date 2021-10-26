@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Block Architecture</h1>
+        <p>Обсуждение</p>
+    </header>
+
+    <section class="slide">
+        Проблема
+        https://testjmb.alfabank.ru/ona/
+    </section>
+
+    <section class="slide">
+        Давайте рассомтрим текущую реализацию
+    </section>
+
+    <section class="slide">
+        <img src="assets/1.png" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        <img src="assets/2.png" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        <img src="assets/3.png" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        <img src="assets/4.png" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        Каким образом кнопка отправить становится активной? Давайте взглянем на код этого участка... 
+    </section>
+
+    <section class="slide">
+        /ona-ao-ui/src/containers/ona/company-info-page/forms/company-branch/company-branch.tsx (CompanyBranch)
+        <img src="assets/5.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        /ona-ao-ui/src/containers/ona/company-info-page/forms/company-branch/company-branch.tsx (CompanyBranch)
+        <img src="assets/6.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        /ona-ao-ui/src/containers/ona/company-info-page/forms/company-branch/company-branch.tsx (CompanyBranch)
+        <img src="assets/7.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        Взглянем где этот компонент используется
+    </section>
+
+    <section class="slide">
+        /ona-ao-ui/src/containers/ona/company-info-page/forms/company-info-form.tsx (CompanyInfoForm)
+        <img src="assets/8.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        Где мы храним данные? (При использовании redux-form)
+    </section>
+
+
+    <section class="slide">
+        <img src="assets/9.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        Супер. Тогда как кнопка Продолжить ставноится активна?
+    </section>
+
+    <section class="slide">
+        <img src="assets/10.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        Заглянем внутрь кнопки.
+    </section>
+
+    <section class="slide">
+        <img src="assets/11.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        Так, стоп. Слишком сложно.
+
+        <p>Какие требования к кнопке?</p>
+        <ul>
+            <li>
+                Кнопка должна быть глупой
+            </li>
+            <li>
+                Кнопка активна когда ей скажут
+            </li>
+            <li>
+                При клике, кнопка выполняет те действия, которые ей скажут (диспатч и ли иное)
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        Ок, взглянем на другие формы
+    </section>
+
+    <section class="slide">
+        Страница Интернет-банк
+        <img src="assets/12.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        По сути видим тоже самое, разрозненные микроформы
+        <img src="assets/12.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        Что с кнопкой Продолжить? Ой, совсем другая реализация
+        <img src="assets/13.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        Совсем другая...
+        <img src="assets/14.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        И так везде...
+
+        Это было возможно в рамках небольшого приложения. Но при длинномй "pileline" заявки с большим количеством бизнес логики необходим рефакторинг.
+    </section>
+
+    <section class="slide">
+        Что же делать? давайте разбираться.
+    </section>
+
+    <section class="slide">
+        I. Шаг первый
+
+        Композиция
+    </section>
+
+    <section class="slide">
+        Композиция
+        <img src="assets/15.jpg" width="740" height="500">
+    </section>
+
+
+    <section class="slide">
+        * Компоненты должны быть глупые
+        * Должны делать долько одно
+        * Компоненты делающие на UI одну вешь, должны делать одну весь 
+    </section>
+
+    <section class="slide">
+        II. Шаг второй
+
+        Унификация
+    </section>
+
+    <section class="slide">
+        Унификация
+        <img src="assets/15.jpg" width="740" height="500">
+    </section>
+
+    <section class="slide">
+        III. Шаг третий
+
+        Общее API компонентов
+    </section>
+
+
+    <footer class="badge">footer</footer>
+    <div class="progress">progress</div>
+    <script src="node_modules/@shower/core/dist/shower.js"></script>
+    <!-- Copyright © 2021 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
