@@ -44,8 +44,8 @@
             bottom: 10px;
             right: 10px;
             z-index: 9999999;
-            background-position-x: 76%;
-            background-position-y: 0%;
+            background-position-x: 35.3%;
+            background-position-y: 49%;
 
             /* transition: background-position .5s; */
             /* background-blend-mode: multiply;
@@ -124,6 +124,9 @@
 
     <section class="slide">
         <h2>Проверка связи</h2>
+        <figure>
+            <img class="cover" src="assets/vote.png">
+        </figure>
     </section>
 
     <section class="slide">
@@ -907,7 +910,7 @@ export default value;
                     enakin.classList.add('enakin_4');
                     break;
                 }
-                case(statsParsed.bad <= 49): {
+                case(statsParsed.bad <= 50): {
                     enakin.classList.add('enakin_5');
                     break;
                 }
@@ -993,7 +996,7 @@ export default value;
         //     socket.emit('for', 'bad');
         // });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <script>
         const canvas = document.getElementById('enakin_canvas');
         const confetti = new JSConfetti({ canvas })

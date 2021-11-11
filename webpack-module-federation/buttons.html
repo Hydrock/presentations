@@ -20,7 +20,7 @@
             display: inline-block;  
             width: 50%;
             height: 100%;
-            background-color: transparent;
+            background-color: black;
             outline: 1px solid red;
             color: white;
             font-weight: 900;
@@ -34,6 +34,7 @@
 
             font-size: 20px;
             padding: 30px;
+            background-repeat: no-repeat;
         }
 
         button + button {
@@ -43,6 +44,17 @@
         button:disabled {
             background-blend-mode: auto;
             background-color: transparent;
+            -webkit-box-shadow: inset 0 0 30px #00f;
+            -moz-box-shadow: inset 0 0 30px #00f;
+            box-shadow: inset 0 0 30px #00f;
+        }
+
+        button + button:disabled {
+            background-blend-mode: auto;
+            background-color: transparent;
+            -webkit-box-shadow: inset 0 0 30px red;
+            -moz-box-shadow: inset 0 0 30px red;
+            box-shadow: inset 0 0 30px red;
         }
     </style>
 </head>
