@@ -5,14 +5,9 @@
     "serve": "shower serve",
     "archive": "shower archive",
     "bundle": "shower bundle",
-    "publish": "shower publish",
-    "start": "node index.js"
+    "publish": "shower publish"
   },
   "devDependencies": {
     "@shower/cli": "^0.3.1"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^4.3.2"
   }
 }
