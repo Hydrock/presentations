@@ -6,7 +6,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 app.use('/assets', express.static(__dirname + '/assets'));
-app.use('/node_modules', express.static(__dirname + '/node_modules'));
+// app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 
 app.get('/presentation', (req, res) => {
