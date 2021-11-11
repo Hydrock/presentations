@@ -7,19 +7,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <style>
+        body {
+            --color-key: #a10000;
+        }
+
+        .slide a {
+            --color-key: #a10000;
+        }
+
+        .shower.list .slide.active {
+            --color-key: #a10000;
+            box-shadow: 0 0 0 20px var(--color-key);
+        }
+
         .shower {
             --slide-ratio: calc(16 / 9);
         }
 
         .progress {
-            background-color: red;
+            background-color: #a10000;
+        }
+
+        .caption {
+            --color-key: transparent!important;
+            color: white;
+            background: url("https://images2.alphacoders.com/671/671306.jpg") center / cover no-repeat black;
+            
+        }
+
+        .enakin {
+            display: inline-block;
+            width: 73px;
+            height: 170px;
+            background-image: url("assets/sprite-transparent.png");
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 9999999;
+            background-position-x: 76%;
+            background-position-y: 0%;
+
+            /* transition: background-position .5s; */
+            /* background-blend-mode: multiply;
+            background-color: #fff; */
+
+            transform: scale(80%, 80%);
+        }
+        .enakin_1 {
+            background-position-x: 63.4%;
+            background-position-y: 98%;
+        }
+        .enakin_2 {
+            background-position-x: 76%;
+            background-position-y: 0%;
+        }
+        .enakin_3 {
+            background-position-x: 0%;
+            background-position-y: 49%;
+        }
+        .enakin_4 {
+            background-position-x: 24%;
+            background-position-y: 49%;
+        }
+        .enakin_5 {
+            background-position-x: 35%;
+            background-position-y: 49%;
+        }
+        .enakin_6 {
+            background-position-x: 47%;
+            background-position-y: 49%;
+        }
+        .enakin_7 {
+            background-position-x: 84%;
+            background-position-y: 49%;
+        }
+        .enakin_8 {
+            background-position-x: 1%;
+            background-position-y: 98%;
+        }
+        .enakin_9 {
+            background-position-x: 14%;
+            background-position-y: 98%;
+        }
+        .enakin_10 {
+            background-position-x: 38%;
+            background-position-y: 98%;
         }
     </style>
     <link rel="stylesheet" href="assets/soldier.css">
+    <link rel="stylesheet" href="assets/hole.css">
 </head>
 
 <body class="shower list">
-
+    <div class="enakin enakin_1"></div>
     <header class="caption">
         <h3>
             <span>
@@ -40,6 +120,10 @@
     </header>
 
     <section class="slide">
+        <h2>Проверка связи</h2>
+    </section>
+
+    <section class="slide">
         <h2>Коротко о себе</h2>
         <ol>
             <li class="next">Работаю в Альфе 4 года.</li>
@@ -52,14 +136,19 @@
         <h2>Творчесво</h2>
         <ol>
             <li>
-                <a href="https://github.com/alfa-code/dependency-aging-index">
-                    DAI - dependency-aging-index
-                </a> - выдаст ошибку если зависимости сильно устарели
+                <a href="https://github.com/alfa-code/dependency-aging-index" target="_blank">
+                    DAI - dependency-aging-index</a>
+                - выдаст ошибку если зависимости сильно устарели
             </li>
             <li>
-                <a href="https://medium.com/@hydrock">
+                <a href="https://medium.com/@hydrock" target="_blank">
                     статьи на medium
                 </a> - иногда пишу заметки
+            </li>
+            <li>
+                <a href="https://web-handbook.ru/" target="_blank">
+                    web-handbook.ru
+                </a> - список и описание html тегов
             </li>
         </ol>
     </section>
@@ -396,13 +485,19 @@
         </ul>
     </section>
     <section class="slide">
-        <h2>
-            Module Federation
-        </h2>
-        <p>
-            Новая киллер фича в Webpack 5 (since 2020). Позволяет точечно подключать модули из другой webpack-сборки,
-            которая расположена на другом хосте. Альтернатива systemjs.
-        </p>
+        <div class="hole_text">
+            <h2>
+                Module Federation
+            </h2>
+            <p>
+                Новая киллер фича в Webpack 5 (since 2020). Позволяет точечно подключать модули из другой webpack-сборки,
+                которая расположена на другом хосте. Альтернатива systemjs.
+            </p>
+            <img src="assets/wmf-logo.png" width="160px" height="160px">
+        </div>
+        <div class="hole_wrapper">
+            <canvas id="hole"></canvas>
+        </div>
     </section>
     <section class="slide">
         <h1>
@@ -762,6 +857,8 @@ export default value;
     <script src="node_modules/@shower/core/dist/shower.js"></script>
     <!-- Copyright © 2021 Yours Truly, Famous Inc. -->
 
+
+    <script src="assets/hole.js"></script>
 </body>
 
 </html>
