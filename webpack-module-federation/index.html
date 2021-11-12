@@ -40,18 +40,21 @@
             width: 73px;
             height: 170px;
             background-image: url("assets/sprite-transparent.png");
-            position: fixed;
+            /* position: fixed;
             bottom: 10px;
             right: 10px;
-            z-index: 9999999;
+            z-index: 9999999; */
             background-position-x: 35.3%;
             background-position-y: 49%;
 
             /* transition: background-position .5s; */
             /* background-blend-mode: multiply;
             background-color: #fff; */
+            position: relative;
+            top: 60px;
+            left: 100px;
 
-            transform: scale(80%, 80%);
+            transform: scale(160%, 160%);
         }
         .enakin_1 {
             background-position-x: 63.4%;
@@ -100,9 +103,6 @@
 </head>
 
 <body class="shower list">
-    <div id="enakin" class="enakin enakin_5">
-        <canvas id="enakin_canvas" style="width: 100%; height: 100%;"></canvas>
-    </div>
     <header class="caption">
         <h3>
             <span>
@@ -121,13 +121,6 @@
         </h4>
         <a href="https://github.com/Hydrock">https://github.com/Hydrock</a>
     </header>
-
-    <section class="slide">
-        <h2>Проверка связи</h2>
-        <figure>
-            <img class="cover" src="assets/vote.png">
-        </figure>
-    </section>
 
     <section class="slide">
         <h2>Коротко о себе</h2>
@@ -769,88 +762,98 @@ export default value;
         </ul>
     </section>
 
-    <!-- <section class="slide">
+    <section class="slide">
         <h1>
             8. Советы - Полезные ссылки
         </h1>
     </section>
 
     <section class="slide">
-        рассказать что SSR пока не работает
-        потому что не работает react suspense
+        <h2>
+            SSR?
+        </h2>
 
-        https://blog.saeloun.com/2021/07/29/react-18-alpha-behavior-changes-in-suspense
+        <a href="https://blog.saeloun.com/2021/07/29/react-18-alpha-behavior-changes-in-suspense">
+            React 18 improves the existing behavior of Suspense
+        </a>
     </section>
 
     <section class="slide">
-        Рассказать про бутстрап - зачем тут зак объясняет зачем бутстрап https://youtu.be/d1SS7KAsbdY?t=345
+        <h2>
+            Асинхронный запуск (bootstrap file)
+        </h2>
+        <a href="https://youtu.be/d1SS7KAsbdY?t=345">тут Зак Рассказывает зачем...</a>
     </section>
 
     <section class="slide">
-        определение типа модуля
-        https://github.com/appzuka/module-federation-ts-loader/blob/master/app1/src/app2.d.ts
-    </section>
-
-
-    <section class="slide">
-        примеры module federation https://github.com/module-federation/module-federation-examples
-    </section>
-
-    <section class="slide">
-        https://www.youtube.com/watch?app=desktop&v=K-yQB9YGmgE
-
-        тут рассказыватеся про фолбек npm пакетом
-    </section>
-
-
-    <section class="slide">
-        https://habr.com/ru/post/554682/ - как готовить шареные модули - тема с хуком идельно легла! - тут есть отличные
-        комментарии для презы
+        <h2>
+            TypeScript
+        </h2>
+        <a href="https://github.com/appzuka/module-federation-ts-loader/blob/master/app1/src/app2.d.ts">
+            Определение Модуля
+        </a>
     </section>
 
     <section class="slide">
-        есть дашборд
+        <h2>
+            Fallback as npm package
+        </h2>
+        
+        <a href="https://www.youtube.com/watch?app=desktop&v=K-yQB9YGmgE">https://www.youtube.com/watch?app=desktop&v=K-yQB9YGmgE</a>
+    </section>
 
-        Дашбоард - https://www.npmjs.com/package/@module-federation/dashboard-plugin
+    <section class="slide">
+        <h2>
+            Как готовить шареные модули
+        </h2>
+        <a href="https://habr.com/ru/post/554682/">https://habr.com/ru/post/554682/</a>
+    </section>
 
+    <section class="slide">
+        <h2>
+            Дашбоард
+        </h2>
+
+        <a href="https://www.npmjs.com/package/@module-federation/dashboard-plugin">dashboard-plugin</a>
     </section>
     <section class="slide">
-        еще годнота по теме
+        <h2>
+            Еще много полезных ссылок
+        </h2>
 
-        Преза по докладу WMF -
-        [https://nodkz.github.io/conf-talks/talks/2020.10.26-webpack-federation/index.html#/6/3](https://nodkz.github.io/conf-talks/talks/2020.10.26-webpack-federation/index.html#/6/3)
+        <ul>
+            <li>
+                <a href="https://webpack.js.org/concepts/module-federation/" target="_blank">Module Federation</a>
+            </li>
+            <li>
+                <a href="https://webpack.js.org/plugins/module-federation-plugin/" target="_blank">ModuleFederationPlugin</a>
+            </li>
+            <li>
+                <a href="https://github.com/module-federation/module-federation-examples" target="_blank">База примеров MF</a>
+            </li>
+            <li>
+                <a href="https://github.com/module-federation/module-federation-examples/tree/master/complete-react-case" target="_blank">Микрофронтенд Книга</a>
+            </li>
+        </ul>
+    </section>
 
-        Доклад - видео -
-        [https://www.youtube.com/watch?v=pcY8-pDGLkI&t=3924s&ab_channel=HolyJS](https://www.youtube.com/watch?v=pcY8-pDGLkI&t=3924s&ab_channel=HolyJS)
-
-        Пример WMF -
-        [https://github.com/module-federation/module-federation-examples/tree/master/complete-react-case](https://github.com/module-federation/module-federation-examples/tree/master/complete-react-case)
-
-        Микрофронтенд [https://www.buildingmicrofrontends.com](https://www.buildingmicrofrontends.com/)
-
-        Перевод WMF
-        [https://runebook.dev/ru/docs/webpack/concepts/module-federation](https://runebook.dev/ru/docs/webpack/concepts/module-federation)
-
-        Дашбоард -
-        [https://www.npmjs.com/package/@module-federation/dashboard-plugin](https://www.npmjs.com/package/@module-federation/dashboard-plugin)
-
-        Микрофронтенд - [https://www.youtube.com/watch?v=UcOr2jp0mMU](https://www.youtube.com/watch?v=UcOr2jp0mMU)
-
-        Вариант решения микрофронтенда - [https://single-spa.js.org](https://single-spa.js.org/)
-
-        Микрофронт от яндекса [https://www.youtube.com/watch?v=RcWqY4kcjDY](https://www.youtube.com/watch?v=RcWqY4kcjDY)
-
-        [https://micro-frontends.org](https://micro-frontends.org/)
-
-        другая реализация микрофронта
-        [https://www.youtube.com/watch?v=4THE047ZDzE&t=288s](https://www.youtube.com/watch?v=4THE047ZDzE&t=288s)
-    </section> -->
+    <section class="slide">
+        <h2>Голосование</h2>
+        <div style="display: flex;flex-direction: row; justify-content: space-between;">
+            <div id="enakin" class="enakin enakin_5">
+                <canvas id="enakin_canvas" style="width: 100%; height: 100%;"></canvas>
+            </div>
+            <img src="assets/vote.png">
+        </div>
+        
+    </section>
 
 
     <section class="slide slide_soldier">
         <h1>
             Спасибо
         </h1>
+        <a href="https://github.com/Hydrock">https://github.com/Hydrock</a>
         <div class="soldier"></div>
     </section>
 
