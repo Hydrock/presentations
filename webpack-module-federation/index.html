@@ -871,132 +871,99 @@ export default value;
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        var socket = io();
-        let good = 0;
-        let bad = 0;
+        // var socket = io();
+        // let good = 0;
+        // let bad = 0;
 
-        socket.on('stats', function (msg) {
-            const statsParsed = JSON.parse(msg);
-            console.log('statsParsed:', statsParsed);
+        // socket.on('stats', function (msg) {
+        //     const statsParsed = JSON.parse(msg);
+        //     console.log('statsParsed:', statsParsed);
 
-            const enakin = document.getElementById("enakin");
+        //     const enakin = document.getElementById("enakin");
 
-            const clearAllEnakinClasses = (enakin) => {
-                enakin.classList.remove('enakin_1');
-                enakin.classList.remove('enakin_2');
-                enakin.classList.remove('enakin_3');
-                enakin.classList.remove('enakin_4');
-                enakin.classList.remove('enakin_5');
-                enakin.classList.remove('enakin_6');
-                enakin.classList.remove('enakin_7');
-                enakin.classList.remove('enakin_8');
-                enakin.classList.remove('enakin_9');
-                enakin.classList.remove('enakin_10');
-            }
+        //     const clearAllEnakinClasses = (enakin) => {
+        //         enakin.classList.remove('enakin_1');
+        //         enakin.classList.remove('enakin_2');
+        //         enakin.classList.remove('enakin_3');
+        //         enakin.classList.remove('enakin_4');
+        //         enakin.classList.remove('enakin_5');
+        //         enakin.classList.remove('enakin_6');
+        //         enakin.classList.remove('enakin_7');
+        //         enakin.classList.remove('enakin_8');
+        //         enakin.classList.remove('enakin_9');
+        //         enakin.classList.remove('enakin_10');
+        //     }
 
-            clearAllEnakinClasses(enakin);
+        //     clearAllEnakinClasses(enakin);
 
-            switch (true) {
-                case(statsParsed.bad <= 9): {
-                    enakin.classList.add('enakin_1');
-                    break;
-                }
-                case(statsParsed.bad <= 19): {
-                    enakin.classList.add('enakin_2');
-                    break;
-                }
-                case(statsParsed.bad <= 29): {
-                    enakin.classList.add('enakin_3');
-                    break;
-                }
-                case(statsParsed.bad <= 39): {
-                    enakin.classList.add('enakin_4');
-                    break;
-                }
-                case(statsParsed.bad <= 50): {
-                    enakin.classList.add('enakin_5');
-                    break;
-                }
-                case(statsParsed.bad <= 59): {
-                    enakin.classList.add('enakin_6');
-                    break;
-                }
-                case(statsParsed.bad <= 69): {
-                    enakin.classList.add('enakin_7');
-                    break;
-                }
-                case(statsParsed.bad <= 79): {
-                    enakin.classList.add('enakin_8');
-                    break;
-                }
-                case(statsParsed.bad <= 89): {
-                    enakin.classList.add('enakin_9');
-                    break;
-                }
-                case(statsParsed.bad <= 100): {
-                    enakin.classList.add('enakin_10');
-                    break;
-                }
-                default: {
-                    enakin.classList.add('enakin_5');
-                    break;
-                }
-            }
-
-            // if (statsParsed.good === 50) {
-            //     document.getElementById("map").classList.add('neutral');
-            //     document.getElementById("map").classList.remove('dark');
-            //     document.getElementById("map").classList.remove('light');
-            // }
-
-            // if (statsParsed.good > 50) {
-            //     document.getElementById("map").classList.remove('neutral');
-            //     document.getElementById("map").classList.remove('dark');
-            //     document.getElementById("map").classList.add('light');
-            // }
-
-            // if (statsParsed.good < 50) {
-            //     document.getElementById("map").classList.remove('neutral');
-            //     document.getElementById("map").classList.add('dark');
-            //     document.getElementById("map").classList.remove('light');
-            // }
-        });
-
-        socket.on('forBack', function (msg) {
-            if (msg === 'bad') {
-                confetti.addConfetti({
-                    confettiColors: [
-                        '#FF0000',
-                    ],
-                    confettiRadius: 3,
-                    confettiNumber: 100,
-                })
-            }
-
-            if (msg === 'good') {
-                confetti.addConfetti({
-                    confettiColors: [
-                        '#66b3ff', '66ff66',
-                    ],
-                    confettiRadius: 3,
-                    confettiNumber: 100,
-                })
-            }
-        });
-
-        // var button_1 = document.getElementById('button_1');
-        // var counter = document.getElementById('counter');
-
-        // button_1.addEventListener('click', () => {
-        //     button_1.setAttribute("disabled", true);
-        //     button_2.removeAttribute("disabled");
-        //     socket.emit('for', 'good');
+        //     switch (true) {
+        //         case(statsParsed.bad <= 9): {
+        //             enakin.classList.add('enakin_1');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 19): {
+        //             enakin.classList.add('enakin_2');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 29): {
+        //             enakin.classList.add('enakin_3');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 39): {
+        //             enakin.classList.add('enakin_4');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 50): {
+        //             enakin.classList.add('enakin_5');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 59): {
+        //             enakin.classList.add('enakin_6');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 69): {
+        //             enakin.classList.add('enakin_7');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 79): {
+        //             enakin.classList.add('enakin_8');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 89): {
+        //             enakin.classList.add('enakin_9');
+        //             break;
+        //         }
+        //         case(statsParsed.bad <= 100): {
+        //             enakin.classList.add('enakin_10');
+        //             break;
+        //         }
+        //         default: {
+        //             enakin.classList.add('enakin_5');
+        //             break;
+        //         }
+        //     }
         // });
 
-        // button_2.addEventListener('click', () => {
-        //     button_2.setAttribute("disabled", true);
-        //     button_1.removeAttribute("disabled");
-        //     socket.emit('for', 'bad');
+        // socket.on('forBack', function (msg) {
+        //     if (msg === 'bad') {
+        //         confetti.addConfetti({
+        //             confettiColors: [
+        //                 '#FF0000',
+        //             ],
+        //             confettiRadius: 3,
+        //             confettiNumber: 100,
+        //         })
+        //     }
+
+        //     if (msg === 'good') {
+        //         confetti.addConfetti({
+        //             confettiColors: [
+        //                 '#66b3ff', '66ff66',
+        //             ],
+        //             confettiRadius: 3,
+        //             confettiNumber: 100,
+        //         })
+        //     }
         // });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
