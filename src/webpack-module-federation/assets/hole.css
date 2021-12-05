@@ -1,0 +1,36 @@
+#c {
+    background: #FFF;
+    position: absolute;
+    /* top: 0%;
+    left: 0%; */
+    /* transform: translate(-50%,-50%); */
+}
+
+.hole_wrapper {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+
+    
+}
+
+.hole_text {
+    z-index: 1;
+    position: absolute;
+    color: white !important;
+
+    font-size: 60%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 10%;
+}
+
+.hole_text h2 {
+    color: white !important;
+}
