@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        button {
+            display: inline-block;  
+            width: 50%;
+            height: 100%;
+            background-color: black;
+            outline: 1px solid red;
+            color: white;
+            font-weight: 900;
+            background-position: center;
+            background-size: cover;
+            background-image: url(https://us.v-cdn.net/6025736/uploads/editor/jg/dphd6mugky8n.jpg);
+
+            background-blend-mode: luminosity;
+            background-color: #000;
+            text-shadow: 1px 1px 2px black;
+
+            font-size: 20px;
+            padding: 30px;
+            background-repeat: no-repeat;
+        }
+
+        button + button {
+            background-image: url(https://krot.info/uploads/posts/2019-08/1565256808_art-dart-vejder-19.jpg);
+        }
+
+        button:disabled {
+            background-blend-mode: auto;
+            background-color: transparent;
+            -webkit-box-shadow: inset 0 0 30px #00f;
+            -moz-box-shadow: inset 0 0 30px #00f;
+            box-shadow: inset 0 0 30px #00f;
+        }
+
+        button + button:disabled {
+            background-blend-mode: auto;
+            background-color: transparent;
+            -webkit-box-shadow: inset 0 0 30px red;
+            -moz-box-shadow: inset 0 0 30px red;
+            box-shadow: inset 0 0 30px red;
+        }
+    </style>
+</head>
+<body>
+    <button id="button_1">
+        «Да пребудет с тобой сила»
+    </button>
+    <button id="button_2">
+        Ты недооцениваешь мою мощь!
+    </button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        var button_1 = document.getElementById('button_1');
+        var button_2 = document.getElementById('button_2');
+
+        button_1.addEventListener('click', () => {
+            button_1.setAttribute("disabled", true);
+            button_2.removeAttribute("disabled");
+            socket.emit('for', 'good');
+        });
+
+        button_2.addEventListener('click', () => {
+            button_2.setAttribute("disabled", true);
+            button_1.removeAttribute("disabled");
+            socket.emit('for', 'bad');
+        });
+    </script>
+</body>
+</html>
