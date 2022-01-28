@@ -1,5 +1,6 @@
 # presentations
-presentations
+
+https://hydrock.github.io/presentations/
 
 ##  Собрать докер
 
